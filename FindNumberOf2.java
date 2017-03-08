@@ -7,7 +7,7 @@ public class FindNumberOf2{
 		for(int i=1;i<input;i++){
 			int j=i;
 			while(j>0){
-				int extractDigit=i%10;
+				int extractDigit=j%10;
 				j=j/10;
 				if(extractDigit==2) count++;
 			}

@@ -1,11 +1,12 @@
+import java.lang.*;
 public class Test{
-
 	public static void main(String[] args){
-	 
-		String s1="Aman Kuma Mahato";
-		String s2="Suresh Kumar Mahato";
-		s1=s1.replace("Aman","bhai");
-		System.out.println(s1);
+		System.out.println(smMin(29,29,0));
 }
-
+public static int smMin(int a, int b, int c){
+	if (a-b==0){
+		return c+1;
+	}
+	return smMin(Math.max(a,b)-Math.min(a,b),Math.min(a,b),c+1);
+}
 }

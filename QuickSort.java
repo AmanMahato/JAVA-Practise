@@ -23,11 +23,10 @@ public class QuickSort{
 			System.out.println(individualElement);
 		}
 	}
-	public int[] swap(int[] array,int i,int j){
+	public void swap(int[] array,int i,int j){
 		int tempHolder=array[i];
 		array[i]=array[j];
 		array[j]=tempHolder;
-		return array;
 	}
 	public int split(int[] array,int low,int high){
 		int pivot=low;
@@ -44,8 +43,9 @@ public class QuickSort{
 		}
 		swap(array,lowIndex++,highIndex--);
 	}
-	if(array[pivot]<array[highIndex]){
-	return highIndex;
+	if(array[pivot]>=array[highIndex]){
+		swap(array,pivot,highIndex);
+		return highIndex;
 	}
 	return pivot;
 }

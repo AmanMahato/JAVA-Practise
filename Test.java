@@ -51,8 +51,8 @@ public class Test {
     }
     public static void main(String args[]){
         Test qs = new Test();
-        int A[] = {11,19,0,-1,5,6,16,-3,6,0,14,18,7,21,18,-6,-8};
-//      int A[] = {11,9,0,4,6,-1,13};
+        //int A[] = {11,19,0,-1,5,6,16,-3,6,0,14,18,7,21,18,-6,-8};
+        int A[] = {1,2,3,1,2,3,1,0,-5,2};
         qs.sort(A, 0, A.length-1);
         qs.printArray(A);
         

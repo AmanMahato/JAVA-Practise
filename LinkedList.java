@@ -15,6 +15,13 @@ public class LinkedList{
 		System.out.println("Hello");
 		head=obj.delete(head,140);
 		obj.display(head);
+		System.out.println("REVERSED LIST");
+		Node temp=obj.reverse(head);
+		obj.display(temp);
+		Node tem=obj.reverse(temp);//to get back the original list
+		System.out.println(obj.sizeOfList(head));
+		System.out.println("123 is there: "+obj.isPresent(head,123));
+		System.out.println("120 is there: "+obj.isPresent(head,120));
 	}
 	public Node insertAtFirst(Node head, int data){
 		Node n=new Node(data);
@@ -55,6 +62,30 @@ public class LinkedList{
 			System.out.println(head.data);
 			head=head.next;
 		}
+	}
+	public int sizeOfList(Node head){
+		int count=0;
+		if(head==null) return  count;
+		while(head.next!=null){
+			count++;
+			head=head.next;;
+		}
+		return count+1;
+	}
+	public Node reverse(Node head){ //inplace reverse
+		if (head==null || head.next==null) return head;
+		Node reversedList=reverse(head.next);
+		head.next.next=head;
+		head.next=null;
+		return reversedList;
+	}
+	public Boolean isPresent(Node head, int data){
+		if (head==null) return false;
+		while(head!=null){
+			if(head.data==data) return true;
+			head=head.next;
+		}
+		return false;
 	}
 }
 class Node{

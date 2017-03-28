@@ -1,16 +1,23 @@
 import java.util.*;
 import java.lang.*;
 public class Test {
-   public static void main(String[] args)
+    int a=10;
+    public static void main(String args[]) 
+    { 
+      System.out.println(new Test().proveIt()); 
+      System.out.println(new Test().a);
+    }
+    public int proveIt()
     {
-       int x=8;        
-       Boolean a=isPowerOfTwo(323);
-       System.out.println(a);        
-
+      try {  
+              System.out.println("Try method");
+              a=a+8;
+              return a;  
+      }  
+      finally {  
+          System.out.println("finally block is run before method returns.");
+          a=a+5;
+          //return a;
+      }
     }
-
-    public static Boolean isPowerOfTwo(int input){
-        return((input & (input-1))==0 ? true :false);
-    }
-
 }

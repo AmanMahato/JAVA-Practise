@@ -6,22 +6,42 @@ public class LinkedList{
 		head=obj.insertAtFirst(head,120);
 		head=obj.insertAtFirst(head,130);
 		head=obj.insertAtFirst(head,140);
-		System.out.println("Break");
 		head=obj.insertAtLast(head,999);
 		head=obj.insertAtLast(head,1020);
 		head=obj.insertAtLast(head,1830);
 		head=obj.insertAtLast(head,1540);
 		obj.display(head);
-		System.out.println("Hello");
+		System.out.println("Upto Here the Original List");
 		head=obj.delete(head,140);
+		System.out.println("Deliting 140 from the original list");
 		obj.display(head);
 		System.out.println("REVERSED LIST");
 		Node temp=obj.reverse(head);
 		obj.display(temp);
 		Node tem=obj.reverse(temp);//to get back the original list
-		System.out.println(obj.sizeOfList(head));
+		System.out.println("Size of the list: "+obj.sizeOfList(head));
 		System.out.println("123 is there: "+obj.isPresent(head,123));
 		System.out.println("120 is there: "+obj.isPresent(head,120));
+		head=obj.insertAtLast(head,999);
+		head=obj.insertAtLast(head,1020);
+		System.out.println("Size of the list: "+obj.sizeOfList(head));
+		Node setLikeList=obj.deleteDuplicate(head);
+		System.out.println("Removing Duplicate Items from the list");
+		obj.display(setLikeList);
+	}
+	public Node deleteDuplicate(Node head){
+		Node copiedlist=Node.copyNode(head);
+		Node temp=head;
+		while(copiedlist!=null){
+			while(head!=null){
+				if(copiedlist.data==head.data){
+					head=delete(temp,head.data);
+					head=head.next;
+				}
+				copiedlist=copiedlist.next;
+			}
+		}
+		return temp;
 	}
 	public Node insertAtFirst(Node head, int data){
 		Node n=new Node(data);
@@ -91,6 +111,12 @@ public class LinkedList{
 class Node{
 	int data;
 	Node next;
+	public static Node copyNode(Node node){
+		return(node==null ? null : new Node(node));
+	}
+	public Node(Node node){
+		
+	}
 	public Node(int data){
 		this.data=data;
 		next=null;

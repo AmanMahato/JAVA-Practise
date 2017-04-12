@@ -2,7 +2,6 @@
 Author: Aman K Mahato
 Fibonacci Using Momozation Table
 */
-
 public class Fib{
 	public static void main(String[] args){
 		int value = Integer.parseInt(args[0]);
@@ -11,7 +10,6 @@ public class Fib{
 		}
 		
 	}
-
 	public static int fib(int n){
 		int[] fibArray = new int[n+1];
 		fibArray[0]=0;

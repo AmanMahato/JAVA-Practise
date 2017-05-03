@@ -6,8 +6,12 @@ import java.util.*;
 import java.lang.*;
 public class SumSet{
     public static void main(String[] args){
-        int[] sampleInput={1,2,3,4,5,6,7,8};
-        int target=8;
+        int[] sampleInput=new int[20];
+        for(int i=0;i<20;i++){
+            sampleInput[i]=i;
+        }
+        //int[] sampleInput={1,2,3,4,5,6,7,8};
+        int target=100;
         List<List<Integer>> allTheCombinations=sumSet(sampleInput);
         List<List<Integer>> result=targetCombination(allTheCombinations,target);
         result.forEach(i-> System.out.println(i));

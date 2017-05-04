@@ -6,7 +6,7 @@ import java.lang.*;
 public class FindMaxTime{
 	static List<String> allPossible=new ArrayList<>();
 	public static void main(String[] args){
-		int[] sampleInput={1,2,3,4};
+		int[] sampleInput={2,6,7,9};
 		FindMaxTime findMaxTimeObj=new FindMaxTime();
 		List<Integer> combiOfTwo=findMaxTimeObj.convertToInteger(findMaxTimeObj.allTwoDigitCombination(sampleInput));
 		String hour=findMaxTimeObj.maxHour(combiOfTwo);
@@ -35,7 +35,6 @@ public class FindMaxTime{
 		while(itr.hasNext()){
 			if(itr.next().length()!=2){
 				itr.remove();
-
 			}
 		}	
 		return FindMaxTime.allPossible;
